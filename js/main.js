@@ -2,7 +2,17 @@ var square = document.querySelectorAll(".square");
 var turn = "X";
 var message = document.querySelector(".message");
 var gameover = false;
+var gameDraw = false;
 var resetBtn = document.querySelector(".resetBtn");
+var scoreX = 0;
+var scoreO = 0;
+var scoreXdisplay = document.querySelector(".score-X");
+var scoreOdisplay = document.querySelector(".score-O");
+var winner = null;
+var btnX = document.querySelector(".btn-X");
+var btnO = document.querySelector(".btn-O");
+
+btnX.classList.add("border");
 
 for(var i = 0; i < square.length; i++){
 	square[i].addEventListener("click",function(){
@@ -12,7 +22,7 @@ for(var i = 0; i < square.length; i++){
 				switchTurn(this);
 			}
 			else{
-				message.textContent = "Invalid. Try an empty square."
+				message.textContent = "Invalid. Try an empty box."
 			}
 		}
 
@@ -25,19 +35,33 @@ for(var i = 0; i < square.length; i++){
 function switchTurn(y){
 	if(decision(turn, y)){
 		gameover = true;
+		winner = turn;
+		if(winner == "X"){
+			scoreX++;
+			scoreXdisplay.textContent = scoreX;
+		}
+
+		if(winner == "O"){
+			scoreO++;
+			scoreOdisplay.textContent = scoreO;
+		}
 		message.textContent = "Congrats " + turn + " you're the winner !!";
 	}
 	else if(turn === "X"){
 		turn = "O";
+		btnO.classList.add("border");
+		btnX.classList.remove("border");
 		y.style.color = '#545454';
 		message.textContent = "It's " + turn + " 's turn.";
 	}
 	else{
 		turn = "X";
+		btnX.classList.add("border");
+		btnO.classList.remove("border");
 		y.style.color = '#fff';
 		message.textContent = "It's " + turn + " 's turn.";
 	}
-	
+
 	return turn;	
 }
 
@@ -83,5 +107,8 @@ resetBtn.addEventListener("click", function(){
 	}
 	message.textContent = "Start Again";
 	gameover = false;
-	turn = "X"; 
+	gameDraw = false;
+	turn = "X";
+	btnX.classList.add("border");
+	btnO.classList.remove("border"); 
 });
