@@ -34,6 +34,10 @@ btnX.addEventListener("click", function(){
 		btnO.classList.remove("border");
 		message.textContent = "Start Game";
 	}
+
+	if(count > 0){
+		wrongSound.play();
+	}
 });
 
 btnO.addEventListener("click", function(){
@@ -42,6 +46,10 @@ btnO.addEventListener("click", function(){
 		btnX.classList.remove("border");
 		btnO.classList.add("border");
 		message.textContent = "Start Game";
+	}
+
+	if(count > 0){
+		wrongSound.play();
 	}
 });
 

@@ -10,7 +10,8 @@ body {
 
 h1 {
 	text-align: center;
-	margin: 25px;
+	margin-top: 40px;
+	margin-bottom: 25px;
 }
 
 h2 {
@@ -78,14 +79,6 @@ td {
 	border-bottom: 5px solid #0DA192;
 }
 
-.X {
-	color: #545454;
-}
-
-.O {
-	color: #fff;
-}
-
 .name {
 	float: left;
 	font-weight: bold;
@@ -102,12 +95,14 @@ td {
 }
 
 .btn-X {
+	color: black;
 	position: absolute;
 	top: 13px;
 	left: 350px;
 }
 
 .btn-O {
+	color: black;
 	position: absolute;
 	top: 13px;
 	right: 350px;
@@ -121,5 +116,5 @@ td {
 }
 
 .border {
-	border-bottom: 7px solid #0DA192;
+	border-bottom: 7px solid #14BDAC;
 }
