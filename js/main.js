@@ -27,6 +27,24 @@ var wrongSound = new Howl({
 
 btnX.classList.add("border");
 
+btnX.addEventListener("click", function(){
+	if(count < 1){
+		turn = "X";
+		btnX.classList.add("border");
+		btnO.classList.remove("border");
+		message.textContent = "Start Game";
+	}
+});
+
+btnO.addEventListener("click", function(){
+	if(count < 1){
+		turn = "O";
+		btnX.classList.remove("border");
+		btnO.classList.add("border");
+		message.textContent = "Start Game";
+	}
+});
+
 for(var i = 0; i < square.length; i++){
 	square[i].addEventListener("click",function(){
 		if(!gameover){
@@ -135,7 +153,7 @@ resetBtn.addEventListener("click", function(){
 	for(var i = 1; i <= square.length; i++){
 		clearBox(i);
 	}
-	message.textContent = "Start Again";
+	message.textContent = "Start Again [X by default]";
 	gameover = false;
 	gameDraw = false;
 	winner = null;
