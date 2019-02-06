@@ -44,8 +44,10 @@ for(var i = 0; i < square.length; i++){
 		}
 
 		else{
-			if(count != 9)
+			if(count != 9){
+				wrongSound.play();
 				message.textContent = turn + " already won!";
+			}
 		}
 	});
 }
