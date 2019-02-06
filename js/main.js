@@ -12,9 +12,18 @@ var winner = null;
 var btnX = document.querySelector(".btn-X");
 var btnO = document.querySelector(".btn-O");
 var count = 0;
-var winSound = new Audio("sounds/to-the-point.mp3");
-var drawSound = new Audio("sounds/case-closed.mp3");
-var wrongSound = new Audio("sounds/your-turn.mp3");
+
+var winSound = new Howl({
+  src: ['sounds/to-the-point.mp3']
+});
+
+var drawSound = new Howl({
+  src: ['sounds/case-closed.mp3']
+});
+
+var wrongSound = new Howl({
+  src: ['sounds/your-turn.mp3']
+});
 
 btnX.classList.add("border");
 
