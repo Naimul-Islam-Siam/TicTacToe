@@ -11,6 +11,7 @@ var scoreOdisplay = document.querySelector(".score-O");
 var winner = null;
 var btnX = document.querySelector(".btn-X");
 var btnO = document.querySelector(".btn-O");
+var count = 0;
 
 btnX.classList.add("border");
 
@@ -19,15 +20,18 @@ for(var i = 0; i < square.length; i++){
 		if(!gameover){
 			if(this.textContent === ""){
 				this.textContent = turn;
+				count++;
 				switchTurn(this);
 			}
 			else{
-				message.textContent = "Invalid. Try an empty box."
+				if(count != 9)
+					message.textContent = "Invalid. Try an empty box."
 			}
 		}
 
 		else{
-			message.textContent = turn + " already won!";
+			if(count != 9)
+				message.textContent = turn + " already won!";
 		}
 	});
 }
@@ -47,6 +51,14 @@ function switchTurn(y){
 		}
 		message.textContent = "Congrats " + turn + " you're the winner !!";
 	}
+
+	else if(count === 9){
+		gameDraw = true;
+		message.textContent = "Match Draw!";
+		btnX.classList.remove("border");
+		btnO.classList.remove("border");
+	}
+
 	else if(turn === "X"){
 		turn = "O";
 		btnO.classList.add("border");
@@ -108,6 +120,8 @@ resetBtn.addEventListener("click", function(){
 	message.textContent = "Start Again";
 	gameover = false;
 	gameDraw = false;
+	winner = null;
+	count = 0;
 	turn = "X";
 	btnX.classList.add("border");
 	btnO.classList.remove("border"); 
