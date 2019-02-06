@@ -12,6 +12,9 @@ var winner = null;
 var btnX = document.querySelector(".btn-X");
 var btnO = document.querySelector(".btn-O");
 var count = 0;
+var winSound = new Audio("sounds/to-the-point.mp3");
+var drawSound = new Audio("sounds/case-closed.mp3");
+var wrongSound = new Audio("sounds/your-turn.mp3");
 
 btnX.classList.add("border");
 
@@ -26,7 +29,7 @@ for(var i = 0; i < square.length; i++){
 			else{
 				if(count != 9){
 					message.textContent = "Invalid. Try an empty box."
-				
+					wrongSound.play();
 				}
 			}
 		}
@@ -51,7 +54,7 @@ function switchTurn(y){
 			scoreO++;
 			scoreOdisplay.textContent = scoreO;
 		}
-		
+		winSound.play();
 		message.textContent = "Congrats " + turn + " you're the winner !!";
 	}
 
@@ -60,7 +63,7 @@ function switchTurn(y){
 		message.textContent = "Match Draw!";
 		btnX.classList.remove("border");
 		btnO.classList.remove("border");
-		
+		drawSound.play();
 	}
 
 	else if(turn === "X"){
