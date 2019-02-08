@@ -9,12 +9,13 @@ body {
 	position: relative;
 	height: 100vh;
 	background: #B2FEFA;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #0ED2F7, #B2FEFA);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #0ED2F7, #B2FEFA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: -webkit-linear-gradient(left, #0ED2F7, #B2FEFA);
+    background: -o-linear-gradient(left, #0ED2F7, #B2FEFA);
+    background: linear-gradient(to right, #0ED2F7, #B2FEFA);  /* Chrome 10-25, Safari 5.1-6 */ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .wrapper {
-    width: 900px;
+    width: 1000px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -41,6 +42,7 @@ h2 {
 	display: block;
 	color: #14BDAC;
 	margin: 15px auto;
+	margin-bottom: 20px;
 }
 
 .resetBtn:hover {
