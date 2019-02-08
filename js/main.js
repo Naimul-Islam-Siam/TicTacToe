@@ -1,17 +1,22 @@
-var square = document.querySelectorAll(".square");
 var turn = "X";
-var message = document.querySelector(".message");
 var gameover = false;
+var winner = null;
 var gameDraw = false;
-var resetBtn = document.querySelector(".resetBtn");
+var count = 0;
 var scoreX = 0;
 var scoreO = 0;
-var scoreXdisplay = document.querySelector(".score-X");
-var scoreOdisplay = document.querySelector(".score-O");
-var winner = null;
+
+var square = document.querySelectorAll(".square");
+var message = document.querySelector(".message");
+var resetBtn = document.querySelector(".resetBtn");
+
 var btnX = document.querySelector(".btn-X");
 var btnO = document.querySelector(".btn-O");
-var count = 0;
+
+var scoreXdisplay = document.querySelector(".score-X");
+var scoreOdisplay = document.querySelector(".score-O");
+
+btnX.classList.add("border");
 
 var winSound = new Howl({
   src: ['sounds/to-the-point.mp3']
@@ -24,8 +29,6 @@ var drawSound = new Howl({
 var wrongSound = new Howl({
   src: ['sounds/your-turn.mp3']
 });
-
-btnX.classList.add("border");
 
 btnX.addEventListener("click", function(){
 	if(count < 1){
