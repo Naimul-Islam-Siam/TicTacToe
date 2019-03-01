@@ -10,8 +10,7 @@ There's A Mobile Application for this game that I made [https://github.com/Naimu
 
 You can 
 
-Download The Android Mobile App : https://drive.google.com/open?id=12iM9MUveaH1GCb5sm533bBR9E9xblJGR
-
-Download The Windows Mobile App : https://drive.google.com/open?id=1AbYouMBpZUS4G6ksrSqsdBPmVAfS3n-l
+Download The Android Mobile App : http://bit.ly/2XuUkAW
+Download The Windows Mobile App : http://bit.ly/2SCb1H4
 
 Thank You!!!
